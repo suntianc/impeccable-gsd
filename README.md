@@ -52,11 +52,27 @@ Impeccable 完全接管
 
 ## 🚀 快速开始
 
-### 1. 安装依赖
+### 1. 一键安装
 
-**GSD:** 参考 [GSD 安装指南](https://github.com/nicepkg/gsd)
+```bash
+# 克隆仓库
+git clone https://github.com/suntianc/impeccable-gsd.git
+cd impeccable-gsd
 
-**Impeccable:** 已包含在本项目中，自动安装到 `~/.claude/skills/impeccable/`
+# 运行安装脚本
+bash install.sh
+```
+
+安装脚本会自动：
+- ✅ 检查 GSD 是否已安装
+- ✅ 安装 Impeccable 到 `~/.claude/skills/`
+- ✅ 安装 Impeccable 代理到 `~/.claude/agents/`
+- ✅ 更新 GSD 技能（execute-phase、code-review、sketch）
+- ✅ 更新 GSD 工作流（execute-phase.md、code-review.md）
+
+### 手动安装（可选）
+
+如果需要手动安装，请参考 [CONFIG-GUIDE.md](CONFIG-GUIDE.md)
 
 ### 2. 初始化项目设计上下文
 
@@ -97,34 +113,51 @@ gsd-code-review <phase-number>
 
 ```
 gsd-impeccable/
-├── README.md                      # 本文件
-├── LICENSE                        # Apache 2.0 许可证
-├── INTEGRATION-DESIGN.md          # 完整架构设计文档
-└── CONFIG-GUIDE.md                # 详细配置指南
+├── README.md                              # 本文件
+├── LICENSE                                # Apache 2.0 许可证
+├── INTEGRATION-DESIGN.md                  # 完整架构设计文档
+├── CONFIG-GUIDE.md                        # 详细配置指南
+├── install.sh                             # 自动安装脚本
+│
+├── agents/                                # 代理定义
+│   ├── gsd-impeccable-executor.md         # Impeccable 执行代理
+│   └── gsd-impeccable-reviewer.md         # Impeccable 审查代理
+│
+├── skills/                                # 修改后的 GSD 技能
+│   ├── gsd-execute-phase/SKILL.md         # UI 计划自动检测
+│   ├── gsd-code-review/SKILL.md           # 前端/后端分离审查
+│   └── gsd-sketch/SKILL.md                # 集成 Impeccable 原则
+│
+└── workflows/                             # 修改后的 GSD 工作流
+    ├── execute-phase.md                   # 添加 Impeccable 委托步骤
+    └── code-review.md                     # 添加文件分类逻辑
+```
 
-~/.claude/agents/
-├── gsd-impeccable-executor.md     # Impeccable 执行代理
-└── gsd-impeccable-reviewer.md     # Impeccable 审查代理
+**安装后会部署到：**
 
-~/.claude/skills/
-└── impeccable/                    # Impeccable 技能（30+ 参考文档）
-    ├── SKILL.md
-    └── references/
-        ├── typography.md          # 排版系统
-        ├── color-and-contrast.md  # 色彩与对比度
-        ├── spatial-design.md      # 空间设计
-        ├── motion-design.md       # 动效设计
-        ├── accessibility.md       # 无障碍设计
-        └── ... (25+ 更多参考文档)
-
-~/.claude/get-shit-done/workflows/
-├── execute-phase.md               # 修改：添加 Impeccable 委托
-└── code-review.md                 # 修改：添加前端/后端分离
+```
+~/.claude/
+├── agents/                                # 代理定义
+│   ├── gsd-impeccable-executor.md
+│   └── gsd-impeccable-reviewer.md
+│
+├── skills/
+│   └── impeccable/                        # Impeccable 技能（30+ 参考文档）
+│       ├── SKILL.md
+│       └── references/
+│           ├── typography.md
+│           ├── color-and-contrast.md
+│           ├── spatial-design.md
+│           └── ... (27+ 更多)
+│
+└── get-shit-done/workflows/
+    ├── execute-phase.md
+    └── code-review.md
 
 ~/.cc-switch/skills/
-├── gsd-execute-phase/SKILL.md     # 修改：添加 UI 计划检测
-├── gsd-code-review/SKILL.md       # 修改：添加文件分类
-└── gsd-sketch/SKILL.md            # 修改：集成 Impeccable 原则
+├── gsd-execute-phase/SKILL.md
+├── gsd-code-review/SKILL.md
+└── gsd-sketch/SKILL.md
 ```
 
 ---
