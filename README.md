@@ -1,6 +1,6 @@
 # 🎨 GSD × Impeccable 整合项目
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Impeccable v2.0.0](https://img.shields.io/badge/Impeccable-v2.0.0-purple.svg)](https://github.com/pbakaus/impeccable)
 
 > **GSD 为项目管理主入口，Impeccable 完全接管 UI/前端工作**
@@ -292,7 +292,7 @@ gsd-sketch "创建一个现代风格的登录表单"
 
 ## 📄 许可证
 
-本项目基于 [Apache License 2.0](LICENSE) 许可证。
+本项目基于 [MIT License](LICENSE) 许可证。
 
 **Impeccable** 基于 [Apache 2.0](https://github.com/pbakaus/impeccable/blob/main/LICENSE) 许可证，由 Paul Bakaus 创建。
 
