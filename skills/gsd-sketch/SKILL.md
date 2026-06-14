@@ -49,7 +49,9 @@ Does not require prior new-project setup — auto-creates `.planning/sketches/` 
 
 When generating UI sketches, apply Impeccable design principles:
 
-1. **Read .impeccable.md** if it exists to understand the project's design context (target audience, brand tone, aesthetic direction)
+1. **Check for `.impeccable.md`** in the project root:
+   - **If it exists**: silently read it to understand the project's design context (target audience, brand tone, aesthetic direction). Do not narrate the check — just apply its contents.
+   - **If it does not exist**: run the full `teach-impeccable.md` context-gathering flow first (explore codebase, ask UX-focused questions, write `.impeccable.md`). Only after `.impeccable.md` is written, continue with the sketch mood intake and build steps.
 
 2. **Avoid AI Slop:**
    - ❌ No Inter/Roboto/Arial/Open Sans fonts
